@@ -1,0 +1,53 @@
+@font-face {
+  font-family: "iconfont";
+  src: url("/assets/font/iconfont.eot?5d73a9c39c0008865c43438a9d836bce#iefix") format("embedded-opentype"),
+url("/assets/font/iconfont.woff?5d73a9c39c0008865c43438a9d836bce") format("woff"),
+url("/assets/font/iconfont.woff2?5d73a9c39c0008865c43438a9d836bce") format("woff2");
+}
+
+@mixin iconfont-styles {
+  font-family: iconfont !important;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  text-transform: none;
+  text-decoration: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@function iconfont-char($filename) {
+  $char: '';
+
+    @if $filename == pdf {
+      $char: unquote("\"") + unquote(str-insert("f101", "\\", 1)) + unquote("\"");
+    }
+    @if $filename == instagram {
+      $char: unquote("\"") + unquote(str-insert("f102", "\\", 1)) + unquote("\"");
+    }
+    @if $filename == facebook {
+      $char: unquote("\"") + unquote(str-insert("f103", "\\", 1)) + unquote("\"");
+    }
+    @if $filename == directionArrowRight {
+      $char: unquote("\"") + unquote(str-insert("f104", "\\", 1)) + unquote("\"");
+    }
+    @if $filename == directionArrowLeft {
+      $char: unquote("\"") + unquote(str-insert("f105", "\\", 1)) + unquote("\"");
+    }
+    @if $filename == blank {
+      $char: unquote("\"") + unquote(str-insert("f106", "\\", 1)) + unquote("\"");
+    }
+
+  @return $char;
+}
+
+@mixin iconfont($filename, $insert: before) {
+  &:#{$insert} {
+    @include iconfont;
+    content: iconfont-char($filename);
+    vertical-align: middle;
+    line-height: 1;
+    display: inline-block;
+  }
+}

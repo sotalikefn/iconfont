@@ -1,0 +1,20 @@
+{
+  "name": "iconfont",
+  "inputDir": "src/font/svg",
+  "outputDir": "dist/assets/font",
+  "fontsUrl": "/assets/font",
+  "normalize": true,
+  "fontTypes": [
+    "eot",
+    "woff",
+    "woff2"
+  ],
+  "assetTypes": [
+    "scss",
+    "css",
+    "html"
+  ],
+  "templates": {
+    "scss": "src/font/templates/iconfont.scss.hbs"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "fantasticon": "^3.0.0"
+  },
+  "scripts": {
+    "iconfont": "npx fantasticon"
+  }
+}

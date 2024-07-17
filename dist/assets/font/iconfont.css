@@ -1,0 +1,36 @@
+@font-face {
+    font-family: "iconfont";
+    src: url("/assets/font/iconfont.eot?5d73a9c39c0008865c43438a9d836bce#iefix") format("embedded-opentype"),
+url("/assets/font/iconfont.woff?5d73a9c39c0008865c43438a9d836bce") format("woff"),
+url("/assets/font/iconfont.woff2?5d73a9c39c0008865c43438a9d836bce") format("woff2");
+}
+
+i[class^="icon-"]:before, i[class*=" icon-"]:before {
+    font-family: iconfont !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-pdf:before {
+    content: "\f101";
+}
+.icon-instagram:before {
+    content: "\f102";
+}
+.icon-facebook:before {
+    content: "\f103";
+}
+.icon-directionArrowRight:before {
+    content: "\f104";
+}
+.icon-directionArrowLeft:before {
+    content: "\f105";
+}
+.icon-blank:before {
+    content: "\f106";
+}

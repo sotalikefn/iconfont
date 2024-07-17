@@ -1,0 +1,38 @@
+@font-face {
+  font-family: "{{ name }}";
+  src: {{{ fontSrc }}};
+}
+
+@mixin {{ name }}-styles {
+  font-family: {{ name }} !important;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  text-transform: none;
+  text-decoration: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@function {{ name }}-char($filename) {
+  $char: '';
+
+  {{# each codepoints }}
+    @if $filename == {{ @key }} {
+      $char: unquote("\"") + unquote(str-insert("{{ codepoint this }}", "\\", 1)) + unquote("\"");
+    }
+  {{/ each }}
+
+  @return $char;
+}
+
+@mixin iconfont($filename, $insert: before) {
+  &:#{$insert} {
+    @include {{ name }};
+    content: {{ name }}-char($filename);
+    vertical-align: middle;
+    line-height: 1;
+    display: inline-block;
+  }
+}
