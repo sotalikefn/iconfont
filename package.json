@@ -1,8 +1,9 @@
 {
   "devDependencies": {
-    "fantasticon": "^3.0.0"
+    "fantasticon": "^3.0.0",
+    "move-file-cli": "^3.0.0"
   },
   "scripts": {
-    "iconfont": "npx fantasticon"
+    "iconfont": "npx fantasticon && npx move-file dist/assets/font/iconfont.scss src/css/foundation/iconfont.scss"
   }
 }

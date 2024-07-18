@@ -1,5 +1,5 @@
 @font-face {
-  font-family: "iconfont";
+  font-family: iconfont;
   src: url("/assets/font/iconfont.eot?5d73a9c39c0008865c43438a9d836bce#iefix") format("embedded-opentype"),
 url("/assets/font/iconfont.woff?5d73a9c39c0008865c43438a9d836bce") format("woff"),
 url("/assets/font/iconfont.woff2?5d73a9c39c0008865c43438a9d836bce") format("woff2");
@@ -8,13 +8,17 @@ url("/assets/font/iconfont.woff2?5d73a9c39c0008865c43438a9d836bce") format("woff
 @mixin iconfont-styles {
   font-family: iconfont !important;
   font-style: normal;
-  font-variant: normal;
   font-weight: normal;
-  text-transform: none;
-  text-decoration: none;
+  font-variant: normal;
   line-height: 1;
+  text-decoration: none;
+  text-transform: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+%iconfont {
+  @include iconfont-styles;
 }
 
 @function iconfont-char($filename) {
@@ -44,10 +48,10 @@ url("/assets/font/iconfont.woff2?5d73a9c39c0008865c43438a9d836bce") format("woff
 
 @mixin iconfont($filename, $insert: before) {
   &:#{$insert} {
-    @include iconfont;
-    content: iconfont-char($filename);
-    vertical-align: middle;
-    line-height: 1;
     display: inline-block;
+    line-height: 1;
+    vertical-align: middle;
+    content: iconfont-char($filename);
+    @extend %iconfont;
   }
 }

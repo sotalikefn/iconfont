@@ -15,6 +15,7 @@
     "html"
   ],
   "templates": {
-    "scss": "src/font/templates/iconfont.scss.hbs"
+    "scss": "src/font/templates/iconfont.scss.hbs",
+    "html": "src/font/templates/iconfont.html.hbs"
   }
 }

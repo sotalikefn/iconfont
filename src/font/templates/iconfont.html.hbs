@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="robots" content="noindex">
 
-  <title>iconfont</title>
+  <title>{{ name }}</title>
 
   <style>
     body {
@@ -27,7 +27,7 @@
       -moz-border-radius: 3px 3px 0 0;
       border-radius: 3px 3px 0 0;
     }
-    .preview .inner  {
+    .preview .inner {{ baseTag }} {
       line-height: 85px;
       font-size: 40px;
       color: #333;
@@ -51,52 +51,19 @@
     }
   </style>
 
-  <link rel="stylesheet" type="text/css" href="iconfont.css" />
+  <link rel="stylesheet" type="text/css" href="{{ name }}.css" />
 </head>
 <body>
-  <h1>iconfont</h1>
+  <h1>{{ name }}</h1>
 
+  {{# each assets }}
     <div class="preview">
       <span class="inner">
-        <i class="icon icon-pdf"></i>
+        <{{ ../tag }} class="{{ ../prefix }} {{ ../prefix }}-{{ @key }}"></{{ ../tag }}>
       </span>
       <br>
-      <span class='label'>pdf</span>
+      <span class='label'>{{ @key }}</span>
     </div>
-    <div class="preview">
-      <span class="inner">
-        <i class="icon icon-instagram"></i>
-      </span>
-      <br>
-      <span class='label'>instagram</span>
-    </div>
-    <div class="preview">
-      <span class="inner">
-        <i class="icon icon-facebook"></i>
-      </span>
-      <br>
-      <span class='label'>facebook</span>
-    </div>
-    <div class="preview">
-      <span class="inner">
-        <i class="icon icon-directionArrowRight"></i>
-      </span>
-      <br>
-      <span class='label'>directionArrowRight</span>
-    </div>
-    <div class="preview">
-      <span class="inner">
-        <i class="icon icon-directionArrowLeft"></i>
-      </span>
-      <br>
-      <span class='label'>directionArrowLeft</span>
-    </div>
-    <div class="preview">
-      <span class="inner">
-        <i class="icon icon-blank"></i>
-      </span>
-      <br>
-      <span class='label'>blank</span>
-    </div>
+  {{/ each }}
 </body>
 </html>
